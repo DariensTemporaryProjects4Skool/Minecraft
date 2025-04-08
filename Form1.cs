@@ -18,11 +18,28 @@ namespace Minecraft
         public Form1()
         {
             InitializeComponent();
+            AssemblyCommand command = new AssemblyCommand();
+            Parser parser = new Parser();
+            List<AssemblyCommand> commands = new List<AssemblyCommand>();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
+
+        // This is all for the purpose of testing and can be replaced with your new GUI buttons and such
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    string UserInput = richTextBox1.Text;
+
+
+        //    AssemblyCommand command = new AssemblyCommand();
+        //    Parser parser = new Parser();
+        //    List<AssemblyCommand> commands = new List<AssemblyCommand>();
+        //    parser.ParseUserInput(UserInput, commands);
+
+
     }
 }
