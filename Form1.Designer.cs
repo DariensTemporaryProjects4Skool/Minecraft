@@ -38,13 +38,13 @@
             this.BtnRun = new System.Windows.Forms.Button();
             this.BtnTest = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.ComboCommand = new System.Windows.Forms.ComboBox();
-            this.ComboArg1 = new System.Windows.Forms.ComboBox();
-            this.ComboArg2 = new System.Windows.Forms.ComboBox();
-            this.ComboArg3 = new System.Windows.Forms.ComboBox();
             this.picturebox1 = new System.Windows.Forms.PictureBox();
             this.DancingMan = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BtnReset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LblR1Label
@@ -117,63 +117,33 @@
             // 
             // BtnRun
             // 
-            this.BtnRun.Location = new System.Drawing.Point(65, 256);
+            this.BtnRun.Location = new System.Drawing.Point(65, 319);
             this.BtnRun.Name = "BtnRun";
             this.BtnRun.Size = new System.Drawing.Size(539, 57);
             this.BtnRun.TabIndex = 7;
             this.BtnRun.Text = "run";
             this.BtnRun.UseVisualStyleBackColor = true;
+            this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
             // 
             // BtnTest
             // 
-            this.BtnTest.Location = new System.Drawing.Point(65, 319);
+            this.BtnTest.Location = new System.Drawing.Point(65, 382);
             this.BtnTest.Name = "BtnTest";
             this.BtnTest.Size = new System.Drawing.Size(539, 57);
             this.BtnTest.TabIndex = 8;
-            this.BtnTest.Text = "test btn";
+            this.BtnTest.Text = "LD #5 R1 LD #30 R2 ADD R1 R2 R3";
             this.BtnTest.UseVisualStyleBackColor = true;
             this.BtnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(62, 179);
+            this.label2.Font = new System.Drawing.Font("Arial Black", 11F, System.Drawing.FontStyle.Bold);
+            this.label2.Location = new System.Drawing.Point(60, 170);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 18);
+            this.label2.Size = new System.Drawing.Size(121, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "User Input";
-            // 
-            // ComboCommand
-            // 
-            this.ComboCommand.FormattingEnabled = true;
-            this.ComboCommand.Location = new System.Drawing.Point(65, 219);
-            this.ComboCommand.Name = "ComboCommand";
-            this.ComboCommand.Size = new System.Drawing.Size(72, 26);
-            this.ComboCommand.TabIndex = 11;
-            // 
-            // ComboArg1
-            // 
-            this.ComboArg1.FormattingEnabled = true;
-            this.ComboArg1.Location = new System.Drawing.Point(143, 219);
-            this.ComboArg1.Name = "ComboArg1";
-            this.ComboArg1.Size = new System.Drawing.Size(72, 26);
-            this.ComboArg1.TabIndex = 12;
-            // 
-            // ComboArg2
-            // 
-            this.ComboArg2.FormattingEnabled = true;
-            this.ComboArg2.Location = new System.Drawing.Point(221, 219);
-            this.ComboArg2.Name = "ComboArg2";
-            this.ComboArg2.Size = new System.Drawing.Size(72, 26);
-            this.ComboArg2.TabIndex = 13;
-            // 
-            // ComboArg3
-            // 
-            this.ComboArg3.FormattingEnabled = true;
-            this.ComboArg3.Location = new System.Drawing.Point(299, 219);
-            this.ComboArg3.Name = "ComboArg3";
-            this.ComboArg3.Size = new System.Drawing.Size(72, 26);
-            this.ComboArg3.TabIndex = 14;
             // 
             // picturebox1
             // 
@@ -189,23 +159,52 @@
             // 
             this.DancingMan.AutoSize = true;
             this.DancingMan.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.DancingMan.Location = new System.Drawing.Point(436, 106);
+            this.DancingMan.Location = new System.Drawing.Point(443, 97);
             this.DancingMan.Name = "DancingMan";
             this.DancingMan.Size = new System.Drawing.Size(33, 28);
             this.DancingMan.TabIndex = 16;
             this.DancingMan.Text = "...";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
+            this.richTextBox1.Location = new System.Drawing.Point(65, 200);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(539, 113);
+            this.richTextBox1.TabIndex = 17;
+            this.richTextBox1.Text = "";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.BtnReset);
+            this.groupBox1.Location = new System.Drawing.Point(65, 458);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(539, 100);
+            this.groupBox1.TabIndex = 18;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "danger zone";
+            // 
+            // BtnReset
+            // 
+            this.BtnReset.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnReset.ForeColor = System.Drawing.Color.Red;
+            this.BtnReset.Location = new System.Drawing.Point(160, 34);
+            this.BtnReset.Name = "BtnReset";
+            this.BtnReset.Size = new System.Drawing.Size(219, 37);
+            this.BtnReset.TabIndex = 0;
+            this.BtnReset.Text = "Reset";
+            this.BtnReset.UseVisualStyleBackColor = false;
+            this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(669, 620);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.DancingMan);
             this.Controls.Add(this.picturebox1);
-            this.Controls.Add(this.ComboArg3);
-            this.Controls.Add(this.ComboArg2);
-            this.Controls.Add(this.ComboArg1);
-            this.Controls.Add(this.ComboCommand);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.BtnTest);
             this.Controls.Add(this.BtnRun);
@@ -220,6 +219,7 @@
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,12 +237,11 @@
         private System.Windows.Forms.Button BtnRun;
         private System.Windows.Forms.Button BtnTest;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox ComboCommand;
-        private System.Windows.Forms.ComboBox ComboArg1;
-        private System.Windows.Forms.ComboBox ComboArg2;
-        private System.Windows.Forms.ComboBox ComboArg3;
         private System.Windows.Forms.PictureBox picturebox1;
         private System.Windows.Forms.Label DancingMan;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button BtnReset;
     }
 }
 
