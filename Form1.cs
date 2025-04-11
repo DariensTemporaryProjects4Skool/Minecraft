@@ -82,7 +82,7 @@ namespace Minecraft
             }
 
             
-            isDancing = !isDancing;
+            isDancing = !isDancing;   
         }
     }
 
@@ -100,7 +100,3 @@ namespace Minecraft
         //    Parser parser = new Parser();
         //    List<AssemblyCommand> commands = new List<AssemblyCommand>();
         //    parser.ParseUserInput(UserInput, commands);
-
-
-    }
-}
