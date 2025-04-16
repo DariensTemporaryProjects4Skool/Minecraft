@@ -36,14 +36,10 @@
             this.LblR2 = new System.Windows.Forms.Label();
             this.LblR3 = new System.Windows.Forms.Label();
             this.BtnRun = new System.Windows.Forms.Button();
-            this.BtnTest = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.picturebox1 = new System.Windows.Forms.PictureBox();
-            this.DancingMan = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.BtnReset = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,16 +121,6 @@
             this.BtnRun.UseVisualStyleBackColor = true;
             this.BtnRun.Click += new System.EventHandler(this.BtnRun_Click);
             // 
-            // BtnTest
-            // 
-            this.BtnTest.Location = new System.Drawing.Point(65, 382);
-            this.BtnTest.Name = "BtnTest";
-            this.BtnTest.Size = new System.Drawing.Size(539, 57);
-            this.BtnTest.TabIndex = 8;
-            this.BtnTest.Text = "LD #5 R1 LD #30 R2 ADD R1 R2 R3";
-            this.BtnTest.UseVisualStyleBackColor = true;
-            this.BtnTest.Click += new System.EventHandler(this.btnTest_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -144,26 +130,6 @@
             this.label2.Size = new System.Drawing.Size(121, 27);
             this.label2.TabIndex = 10;
             this.label2.Text = "User Input";
-            // 
-            // picturebox1
-            // 
-            this.picturebox1.BackColor = System.Drawing.Color.IndianRed;
-            this.picturebox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.picturebox1.Location = new System.Drawing.Point(423, 74);
-            this.picturebox1.Name = "picturebox1";
-            this.picturebox1.Size = new System.Drawing.Size(100, 81);
-            this.picturebox1.TabIndex = 15;
-            this.picturebox1.TabStop = false;
-            // 
-            // DancingMan
-            // 
-            this.DancingMan.AutoSize = true;
-            this.DancingMan.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold);
-            this.DancingMan.Location = new System.Drawing.Point(443, 97);
-            this.DancingMan.Name = "DancingMan";
-            this.DancingMan.Size = new System.Drawing.Size(33, 28);
-            this.DancingMan.TabIndex = 16;
-            this.DancingMan.Text = "...";
             // 
             // richTextBox1
             // 
@@ -203,10 +169,7 @@
             this.ClientSize = new System.Drawing.Size(669, 620);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.DancingMan);
-            this.Controls.Add(this.picturebox1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.BtnTest);
             this.Controls.Add(this.BtnRun);
             this.Controls.Add(this.LblR3);
             this.Controls.Add(this.LblR2);
@@ -218,7 +181,6 @@
             this.Font = new System.Drawing.Font("Arial Black", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -235,10 +197,7 @@
         private System.Windows.Forms.Label LblR2;
         private System.Windows.Forms.Label LblR3;
         private System.Windows.Forms.Button BtnRun;
-        private System.Windows.Forms.Button BtnTest;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox picturebox1;
-        private System.Windows.Forms.Label DancingMan;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button BtnReset;
