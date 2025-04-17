@@ -21,6 +21,8 @@ namespace Minecraft
         List<AssemblyCommand> commands = new List<AssemblyCommand>();
         Commands Command = new Commands();
         Registers registers = new Registers();
+        private Dictionary<string, UserVariables> customVariables = new Dictionary<string, UserVariables>();
+
 
         public Form1()
         {
@@ -67,6 +69,11 @@ namespace Minecraft
 
             richTextBox1.Clear();
 
+        }
+
+        private void btnClearUserVars_Click(object sender, EventArgs e)
+        {
+            customVariables.Clear();
         }
     }
 
