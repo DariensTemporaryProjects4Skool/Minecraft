@@ -64,6 +64,7 @@
     <Compile Include="TRP2Form.Designer.cs">
       <DependentUpon>TRP2Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserVariables.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

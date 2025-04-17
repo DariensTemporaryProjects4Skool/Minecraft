@@ -9,24 +9,22 @@ namespace Minecraft
 {
     public class Commands
     {
+        private Dictionary<string, UserVariables> userVariables = new Dictionary<string, UserVariables>();
+
         public void ExecuteCommands(List<AssemblyCommand> commands, Registers registers)
         {
+
             foreach (var cmd in commands)
             {
                 if (cmd.Command != "TRP")
                 {
-                    string target = cmd.Var1;
-                    string source = cmd.Var2;
-                    string source2 = cmd.Var3;
+                    string input1 = cmd.Var1;  //better namingish?
+                    string input2 = cmd.Var2;
 
-                    if (string.IsNullOrEmpty(target) || string.IsNullOrEmpty(source))
+                    if (string.IsNullOrEmpty(input1) || string.IsNullOrEmpty(input2))
                     {
+                        //User has to put in all the necessary parts
                         Console.WriteLine("Invalid command");
-                        continue;
-                    }
-                    if (string.IsNullOrEmpty(cmd.Command))
-                    {
-                        Console.WriteLine("Command is empty");
                         continue;
                     }
                 }
@@ -186,7 +184,7 @@ namespace Minecraft
                             }
                             break;
                         }
-                    case "MOV": // New command
+                    case "MOV": // Moves value from one register to another
                         {
                             int val1;
 
@@ -202,12 +200,34 @@ namespace Minecraft
                             }
                             else
                                 break;
-                            
-
 
                             break;
                         }
-                        
+                    case "INT":
+                    case "CHAR": //Ysbrand
+                        {
+                            if (!userVariables.ContainsKey(cmd.Var1))
+                            {
+                                int val;
+                                if (int.TryParse(cmd.Var2, out val))
+                                {
+                                    val = Convert.ToInt32(cmd.Var2);
+                                }
+                                else
+                                {
+                                    MessageBox.Show($"Invalid value for variable '{cmd.Var1}'.");
+                                    break;
+                                }
+                                userVariables[cmd.Var1] = new UserVariables(cmd.Command, val);
+                            }
+                            else
+                            {
+                                MessageBox.Show($"Variable '{cmd.Var1}' already declared.");
+                            }
+
+                            MessageBox.Show($"Variable '{cmd.Var1}' of type '{cmd.Command}' with value {userVariables[cmd.Var1].Value} declared.");
+                            break;
+                        }
                     default:
                         {
                             MessageBox.Show($"Unknown command: {cmd.Command}. Other commands before error were executed ");

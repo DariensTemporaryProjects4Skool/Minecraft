@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,6 +11,7 @@ namespace Minecraft
     {
         public List<AssemblyCommand> ParseUserInput(string input, List<AssemblyCommand> commands)
         {
+            
             string[] lines = input.Split('\n');
             foreach (string line in lines)
             {
@@ -22,6 +24,7 @@ namespace Minecraft
                     Var2 = parts.Length > 2 ? parts[2] : null,
                     Var3 = parts.Length > 3 ? parts[3] : null
                 };
+
                 commands.Add(command);
             }
             return commands;
