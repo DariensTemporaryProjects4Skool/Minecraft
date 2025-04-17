@@ -33,56 +33,6 @@ namespace Minecraft
             UpdateRegisterDisplay(registers);
         }
 
-
-        //private void ExecuteCommand()
-        //{
-        //    List<AssemblyCommand> commands = new List<AssemblyCommand>();
-        //    Parser parser = new Parser();
-        //    parser.ParseUserInput(richTextBox1.Text, commands);
-
-        //    foreach (AssemblyCommand cmd in commands)
-        //    {
-        //        string op = cmd.Command.ToUpper();
-        //        string v1 = cmd.Var1;
-        //        string v2 = cmd.Var2;
-        //        string v3 = cmd.Var3;
-
-        //        switch (op)
-        //        {
-        //            case "LD":
-        //                if (v1.StartsWith("#"))
-        //                {
-        //                    int val = int.Parse(v1.Substring(1));
-        //                    SetRegister(v2, val);
-        //                }
-        //                break;
-
-        //            case "ADD":
-        //                SetRegister(v3, GetRegister(v1) + GetRegister(v2));
-        //                break;
-
-        //            case "SUB":
-        //                SetRegister(v3, GetRegister(v1) - GetRegister(v2));
-        //                break;
-
-        //            case "MUL":
-        //                SetRegister(v3, GetRegister(v1) * GetRegister(v2));
-        //                break;
-
-        //            case "DIV":
-        //                SetRegister(v3, GetRegister(v1) / GetRegister(v2));
-        //                break;
-
-        //            case "TRP":
-        //                if (v1 == "3") Close();
-        //                break;
-        //        }
-        //    }
-
-        //    UpdateRegisterDisplay();
-        //}
-
-
         public void UpdateRegisterDisplay(Registers registers)
         {
             LblR1.Text = Registers.R1.ToString();
@@ -93,7 +43,6 @@ namespace Minecraft
 
         private void BtnRun_Click(object sender, EventArgs e)
         {
-            //ExecuteCommand();
             string UserInput = richTextBox1.Text;
 
             parser.ParseUserInput(UserInput, commands);
@@ -102,13 +51,19 @@ namespace Minecraft
 
             UpdateRegisterDisplay(registers);
 
+            commands.Clear(); // Found a bug that ALL commands are being kept so this clears to prevent weird issues with boxes appearing twice
+
         }
 
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            // This will need new code for resetting the registers
+            // Resets the rich textbox and clears the register values
 
-            //UpdateRegisterDisplay();
+            Registers.R1 = 0;
+            Registers.R2 = 0;
+            Registers.R3 = 0;
+
+            UpdateRegisterDisplay(registers);
 
             richTextBox1.Clear();
 
