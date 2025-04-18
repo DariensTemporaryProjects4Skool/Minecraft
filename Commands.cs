@@ -153,6 +153,7 @@ namespace Minecraft
 
                             if (IsRegister(Location))
                             {
+                                // Check if Var1 and Var2 are valid registers or numbers
                                 val1 = Var1.StartsWith("R") ? Registers.GetRegisterValue(Var1) : Convert.ToInt32(Var1);
 
                                 if (Var2.StartsWith("R"))
@@ -221,7 +222,7 @@ namespace Minecraft
                             }
                             break;
                         }
-                    case "MOV": // Moves value from one register to another
+                    case "MOV": // Moves value from one register to another (// i forgot to change this one with the helper methods)
                         {
                             int val1;
 
