@@ -75,6 +75,21 @@ namespace Minecraft
         {
             customVariables.Clear();
         }
+
+        private void generalInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (About about = new About())
+                {
+                    about.ShowDialog();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error opening About form: {ex.Message}");
+            }
+        }
     }
 
 
