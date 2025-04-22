@@ -26,7 +26,8 @@ namespace Minecraft
 
         public Form1()
         {
-            InitializeComponent();  
+            InitializeComponent();
+            G9();
 
         }
 
@@ -40,6 +41,24 @@ namespace Minecraft
             LblR1.Text = Registers.R1.ToString();
             LblR2.Text = Registers.R2.ToString();
             LblR3.Text = Registers.R3.ToString();
+        }
+
+        public void testdebug()
+        {
+          //  MessageBox.Show("Found g9");
+
+        }
+        
+        public void G9 ()
+        {
+            EventsAndStuff e = new EventsAndStuff();
+            e.EventToBeCalled += testdebug;
+            e.Anything();
+        }
+        public void GranderError (object sender, EventArgs e)
+        {
+            
+            MessageBox.Show("You did something terribly wrong,\nand I don't know what it was");
         }
 
 

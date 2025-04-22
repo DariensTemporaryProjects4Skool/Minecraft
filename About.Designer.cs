@@ -34,19 +34,21 @@
             // 
             // rTBHelp
             // 
-            this.rTBHelp.Location = new System.Drawing.Point(40, 29);
+            this.rTBHelp.Location = new System.Drawing.Point(53, 36);
+            this.rTBHelp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rTBHelp.Name = "rTBHelp";
             this.rTBHelp.ReadOnly = true;
-            this.rTBHelp.Size = new System.Drawing.Size(714, 383);
+            this.rTBHelp.Size = new System.Drawing.Size(951, 470);
             this.rTBHelp.TabIndex = 0;
             this.rTBHelp.Text = resources.GetString("rTBHelp.Text");
             // 
             // About
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 452);
+            this.ClientSize = new System.Drawing.Size(1067, 556);
             this.Controls.Add(this.rTBHelp);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "About";
             this.Text = "About";
             this.ResumeLayout(false);

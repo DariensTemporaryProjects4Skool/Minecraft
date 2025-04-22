@@ -172,7 +172,7 @@ Example Program:
 ----------------
 INT x 5
 LD 10 R1
-ADD x R1 R2
+ADD x R1 R3
 TRP 3
 
 This declares a variable x = 5, loads 10 into R1, adds x and R1 and stores it in R2, then outputs R3 (make sure to use TRP 2 before to set R3 if you want to see output).

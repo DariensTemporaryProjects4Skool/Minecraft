@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -29,10 +30,28 @@ namespace Minecraft
             return customVariables.ContainsKey(input);
         }
 
+
+        //essential does the same thing, but now using event delegate to allow flexiblity - Darien
+        private int IsEverythingOrNo(string input)
+        {
+            
+                if (input.StartsWith("R"))
+                    return Registers.GetRegisterValue(input);
+
+                else if (int.TryParse(input, out _))
+                    return int.Parse(input);
+
+                else if (customVariables.ContainsKey(input))
+                    return customVariables[input].Value;
+                else
+                    throw new Exception($"'{input}' is not a valid register, number, or declared variable.");
+            
+        }
+
         //grabs the input from user, and checks if it is a register, number, or declared variable, returns value - Rebecca
         private int ResolveValue(string input, Registers registers)
         {
-            if (input.StartsWith("R"))
+            /*if (input.StartsWith("R"))
                 return Registers.GetRegisterValue(input);
 
             else if (IsNumber(input))
@@ -41,7 +60,11 @@ namespace Minecraft
             else if (IsUserVariable(input))
                 return customVariables[input].Value;
             else
-                throw new Exception($"'{input}' is not a valid register, number, or declared variable.");
+                throw new Exception($"'{input}' is not a valid register, number, or declared variable.");*/
+
+            EventsAndStuff eventsAndStuff = new EventsAndStuff();
+            eventsAndStuff.IntDelegateCalled += IsEverythingOrNo;
+            return eventsAndStuff.Something(input);
         }
 
 

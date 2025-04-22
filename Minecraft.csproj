@@ -54,6 +54,7 @@
     </Compile>
     <Compile Include="AssemblyCommand.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="EventsAndStuff.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
